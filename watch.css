@@ -163,3 +163,9 @@ video {
   text-align: center;
   margin-top: 3rem;
 }
+@media (max-width: 600px) {
+  section {
+    padding: 4rem 7%;
+  
+  }
+}
