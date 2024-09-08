@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mide Travelling Tips</title>
+  <link rel="stylesheet" href="for.css">
+</head>
+<body>
+  <!-- Signup Form -->
+  <section class="signup" id="signup">
+    <div class="form-container">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupName" placeholder="Enter your name" required />
+      <input type="email" id="signupEmail" placeholder="Enter your email" required />
+      <input type="password" id="signupPassword" placeholder="Enter your password" required />
+      <button onclick="signUp()">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Login Form -->
+  <section class="login" id="login">
+    <div class="form-container">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required />
+      <input type="password" id="loginPassword" placeholder="Enter your password" required />
+      <button onclick="login()">Login</button>
+    </div>
+  </section>
+
+  <!-- Welcome Message -->
+  <div id="welcomeMessage" class="welcome-message"></div>
+
+  <!-- JavaScript -->
+  <script>
+    function signUp() {
+      // Get user input from signup form
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value.trim();
+
+      // Validate input fields
+      if (!name || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Store user data in localStorage
+      localStorage.setItem("userName", name);
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+
+      alert("Sign up successful! Please log in.");
+    }
+
+    function login() {
+      // Get user input from login form
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      // Retrieve stored user data from localStorage
+      const storedEmail = localStorage.getItem("userEmail");
+      const storedPassword = localStorage.getItem("userPassword");
+      const storedName = localStorage.getItem("userName");
+
+      // Validate login credentials
+      if (email === storedEmail && password === storedPassword) {
+        // Display welcome message if login is successful
+        document.getElementById("welcomeMessage").textContent = `Welcome, ${storedName}!`;
+
+        // Redirect to the next page
+        setTimeout(() => {
+          window.location.href = "Watch.html"; // Replace with your next page URL
+        }, 2000);
+      } else {
+        alert("Incorrect email or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
