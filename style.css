@@ -1,0 +1,166 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+    }
+    
+    body{
+        background-image: url(TONIFY.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 2;
+    }
+
+    .header{
+        position:fixed;
+        top: 0;
+        left:0;
+        width:100%;
+        padding:2rem 9%;
+        color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        font-weight: 900;
+      }
+      
+      .logo{
+        font-size: 2.5rem;
+        color: var(--text-color);
+        font-weight: 700;
+        cursor: default;
+      }
+      
+      button {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+      }
+
+    p{
+        font-size: 45px;
+        font-weight: 900;
+        color: white;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+        margin-top: 190px;
+        padding-top: 70px;
+    }
+
+    h5{
+        font-size: 25px;
+        font-weight: 200;
+        color: white;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+        padding-top: 20px;
+    }
+
+    h6{
+        font-size: 25px;
+        font-weight: 200;
+        color: white;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+        padding-top: 20px;
+    }
+
+    .input-box .input-field {
+        width: 50%;
+        height: 50px;
+        margin-left: 380px;
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    .input-box .input-field input {
+        width: 50%;
+        height: 100%;
+        border: 2px solid #9A9EA7;
+        outline: none;
+        font-size: 16px;
+        color: black;
+        border-radius: 6px;
+        padding: 15px;
+    }
+    
+    .input-box .input-field input::placeholder {
+        color:#9A9EA7;
+    }
+
+    .input-field .btn {
+        width: 30%;
+        height: 45px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        background: red;
+        font-size: 20px;
+   
+    }
+    @media (max-width: 600px) {
+
+        body{
+            background-image: url(TONIFY.jpg);
+            background-repeat: repeat;
+            background-size: cover;
+            opacity: 2;
+        }
+        .header {
+            padding: 1rem 5%;
+        }
+    
+        .logo {
+            font-size: 2rem;
+        }
+    
+        button {
+            padding: 8px 16px;
+        }
+    
+        p {
+            font-size: 30px;
+            margin-top: 100px;
+            padding-top: 50px;
+            margin-left: 40px;
+            letter-spacing: 5px;
+        }
+    
+        h5, h6 {
+            font-size: 18px;
+        }
+
+        h6{
+            margin-left: 20px;
+        }
+    
+        .input-box .input-field {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .input-box .input-field input {
+            width: 100%;
+        }
+    
+        .input-field .btn {
+            width: 100%;
+        }
+        }
