@@ -10,7 +10,7 @@
     }
     
     body{
-        background-image: url(unnamed (2).jpg);
+        background-image: url(unnamed\ \(2\).jpg);
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 2;
@@ -117,7 +117,7 @@
     @media (max-width: 600px) {
 
         body{
-            background-image: url(unnamed (1).jpg);
+            background-image: url(unnamed\ \(1\).jpg);
             background-repeat: repeat;
             background-size: cover;
             opacity: 2;
