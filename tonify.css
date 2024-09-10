@@ -1,7 +1,7 @@
 
   .locked {
-    pointer-events: none; /* Disable interactions */
-    opacity: 0.5; /* Make it look inactive */
+    pointer-events: auto; /* Disable interactions */
+    opacity: 1; /* Make it look inactive */
   }
   .unlocked {
     pointer-events: auto; /* Enable interactions */
