@@ -22,7 +22,7 @@
         left:0;
         width:100%;
         padding:2rem 9%;
-        color: red;
+        color: whitesmoke;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -38,8 +38,8 @@
       }
       
       button {
-        background-color: red;
-        color: white;
+        background-color: yellow;
+        color: black;
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
@@ -50,7 +50,7 @@
     p{
         font-size: 45px;
         font-weight: 900;
-        color: white;
+        color: black;
         justify-content: center;
         align-content: center;
         display: flex;
@@ -61,7 +61,7 @@
     h5{
         font-size: 25px;
         font-weight: 200;
-        color: white;
+        color: black;
         justify-content: center;
         align-content: center;
         display: flex;
@@ -71,7 +71,7 @@
     h6{
         font-size: 25px;
         font-weight: 200;
-        color: white;
+        color: black;
         justify-content: center;
         align-content: center;
         display: flex;
@@ -109,8 +109,8 @@
         border-radius: 6px;
         cursor: pointer;
         font-size: 16px;
-        color: white;
-        background: red;
+        color: black;
+        background: yellow;
         font-size: 20px;
    
     }
