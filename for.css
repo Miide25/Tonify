@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  background-image: url(TONIFY.jpg);
+  background-image: url(unnamed\ \(2\).jpg);
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 2;
@@ -66,6 +66,9 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
+  body{
+    unnamed\ \(1\).jpg
+  }
   .form-container {
     padding: 1rem;
   }
