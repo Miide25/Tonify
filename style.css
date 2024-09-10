@@ -50,7 +50,7 @@
     p{
         font-size: 45px;
         font-weight: 900;
-        color: black;
+        color: whitesmoke;
         justify-content: center;
         align-content: center;
         display: flex;
@@ -61,7 +61,7 @@
     h5{
         font-size: 25px;
         font-weight: 200;
-        color: black;
+        color: whitesmoke;
         justify-content: center;
         align-content: center;
         display: flex;
@@ -71,7 +71,7 @@
     h6{
         font-size: 25px;
         font-weight: 200;
-        color: black;
+        color: whitesmoke;
         justify-content: center;
         align-content: center;
         display: flex;
