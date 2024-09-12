@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  background-image: url(unnamed\ \(2\).jpg);
+  background-image: url(soft.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 2;
@@ -59,16 +59,14 @@ body {
 
 .welcome-message {
   font-size: 1.6rem;
-  color: #28a745;
-  margin-top: 2rem;
+  font-weight: 800;
+  color: peru;
+  margin-top: 1rem;
   text-align: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  body{
-    unnamed\ \(1\).jpg
-  }
   .form-container {
     padding: 1rem;
   }
