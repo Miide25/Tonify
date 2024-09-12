@@ -1,7 +1,12 @@
-
+body{
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+}
   .locked {
-    pointer-events: auto; /* Disable interactions */
-    opacity: 1; /* Make it look inactive */
+    pointer-events: auto; /* Enable interactions */
+    opacity: 1; /* Make it look active */
   }
   .unlocked {
     pointer-events: auto; /* Enable interactions */
@@ -11,7 +16,6 @@
 /* Preview Section Styles */
 .preview {
     padding: 2.3rem;
-    background-color: #f4f4f4;
     border-radius: 8px;
     margin: 2rem 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,7 +39,7 @@
     margin: 1rem auto;
     padding: 0.8rem 2rem;
     font-size: 1.2rem;
-    background-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.489);
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -43,7 +47,7 @@
   }
   
   .video-container .download-btn:hover {
-    background-color: #0056b3;
+    background-color: #09c0cabe;
   }
   
   .related-movies {
@@ -84,7 +88,7 @@
   }
   
   .related-movies-container .btn:hover {
-    background-color: #555;
+    background-color: #09c0cabe;
   }
   
   /* Media Query for Responsive Layout */
