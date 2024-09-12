@@ -1,4 +1,3 @@
-
 /* General Styles */
 * {
   margin: 0;
@@ -17,11 +16,11 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  color: whitesmoke;
 }
 
 /* Header Styles */
@@ -31,7 +30,7 @@ body {
   left: 0;
   width: 100%;
   padding: 1.5rem 10%;
-  background: #333;
+  background: rgba(0, 0, 0, 0.802);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,28 +40,26 @@ body {
 .header .logo {
   font-size: 2.5rem;
   color: #fff;
-  text-decoration: none;
   font-weight: 700;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  gap: 2rem; /* Add gap between menu items */
-  transition: transform 0.3s ease-out; /* Transition effect for sliding */
+  gap: 2rem;
+  transition: transform 0.3s ease-out;
 }
 
 .navbar a {
   font-size: 1.5rem;
   color: #fff;
-  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  color: #ffd700;
+  color: #09c0cabe;
 }
 
 /* Section Styles */
@@ -94,9 +91,11 @@ video {
 .btn {
   display: flex;
   align-items: center;
-  text-decoration: none;
   padding: 10px 15px;
-  background-color: #333;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
   color: #fff;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -104,12 +103,11 @@ video {
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: #09c0cabe;
 }
 
 .btn img {
   width: 50px;
-  height: auto;
   margin-left: 10px;
   border-radius: 5px;
 }
@@ -130,27 +128,42 @@ video {
   color: #fff;
   cursor: pointer;
 }
+/* Footer Styles */
+.site-footer {
+  background-color: #33333380;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-top: 4rem; /* Adds some space above the footer */
+}
 
-/* Media Queries for Responsive Menu */
+.site-footer p {
+  margin: 0; /* Removes any default margin */
+}
+
+
+/* Media Queries */
 @media (max-width: 768px) {
   .navbar {
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 60px;
     right: 10%;
-    background-color: #333;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0)
+    );
     width: 80%;
     text-align: center;
     border-radius: 8px;
     padding: 1rem;
-    transform: translateX(100%); /* Start off-screen */
-    transition: transform 0.3s ease-out; /* Sliding transition effect */
+    transform: translateX(100%);
   }
 
   .navbar.active {
-    display: flex;
-    transform: translateX(0); /* Slide into view */
+    transform: translateX(0);
   }
 
   .menu-toggle {
@@ -158,14 +171,8 @@ video {
   }
 }
 
-/* Additional Styles */
-.home-content {
-  text-align: center;
-  margin-top: 3rem;
-}
 @media (max-width: 600px) {
   section {
     padding: 4rem 7%;
-  
   }
 }
