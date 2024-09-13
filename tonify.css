@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('your-image.jpg'); /* Replace 'your-image.jpg' with your actual background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('safe.jpg'); /* Replace 'your-image.jpg' with your actual background image */
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden; /* Disable scrolling initially */
