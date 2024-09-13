@@ -23,14 +23,17 @@
     <!-- Hamburger Icon for Mobile Menu -->
     <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
   </header>
+
+  <!-- Main Content -->
+  <section class="home">
     <div class="home-content">
       <h2>Search</h2>
-         <input type="search" id="searchInput" placeholder="Search..." oninput="filterContent()" />
+      <input type="search" id="searchInput" placeholder="Search..." oninput="filterContent()" />
     </div>
   </section>
 
   <!-- Welcome Message -->
-  <div id="welcomeMessage"></div>
+  <div id="welcomeMessage"></div>>
 
   <!-- Sections (Portfolio, etc.) -->
   <section class="home" id="home">
@@ -100,20 +103,25 @@
 
   <!-- JavaScript -->
   <script>
-    function displayWelcomeMessage() {
-      const name = document.getElementById("userName").value.trim();
-      const welcomeMessageElement = document.getElementById("welcomeMessage");
-
-      if (name) {
-        welcomeMessageElement.textContent = `Welcome, ${name}! Thank you for signing up to Tonify.`;
-      } else {
-        welcomeMessageElement.textContent = "Please enter your name.";
-      }
-    }
-
+ // Toggle Mobile Menu
     function toggleMenu() {
       const navbar = document.getElementById("navbar");
-      navbar.classList.toggle("active"); // Toggles the active class to show/hide the menu
+      navbar.classList.toggle("active");
+    }
+
+    // Filter Content Based on Search Input
+    function filterContent() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const contentItems = document.querySelectorAll(".content-item");
+
+      contentItems.forEach(item => {
+        const title = item.getAttribute("data-title").toLowerCase();
+        if (title.includes(searchInput)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
     }
 
     function filterContent() {
