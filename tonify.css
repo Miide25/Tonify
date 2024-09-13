@@ -1,106 +1,111 @@
-body{
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-  );
-   overflow: hidden; /* Disable scrolling initially */
+/* Global Styles */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('your-image.jpg'); /* Replace 'your-image.jpg' with your actual background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Disable scrolling initially */
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
 }
-    }
-    .locked {
-      pointer-events: none; /* Disable interactions */
-      opacity: 0.5; /* Make it look inactive */
-    }
-    .unlocked {
-      pointer-events: auto; /* Enable interactions */
-      opacity: 1; /* Normal appearance */
+
+/* Locked and Unlocked Section Styles */
+.locked {
+  pointer-events: none; /* Disable interactions */
+  opacity: 0.5; /* Make it look inactive */
+}
+
+.unlocked {
+  pointer-events: auto; /* Enable interactions */
+  opacity: 1; /* Normal appearance */
+}
 
 /* Preview Section Styles */
 .preview {
-    padding: 2.3rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .video-container {
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  
-  .video-container video {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 8px;
-    margin-top: 0.5rem;
-  }
-  
-  .video-container .download-btn {
-    display: block;
-    margin: 1rem auto;
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.489);
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .video-container .download-btn:hover {
-    background-color: #09c0cabe;
-  }
-  
-  .related-movies {
-    margin-top: 2rem;
-  }
-  
-  .related-movies p {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
+  padding: 2.3rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+}
+
+.video-container {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+.video-container .download-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.video-container .download-btn:hover {
+  background-color: #09c0cabe;
+}
+
+.related-movies {
+  margin-top: 2rem;
+}
+
+.related-movies p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.related-movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.related-movies-container .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.related-movies-container .btn img {
+  width: 50px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.related-movies-container .btn:hover {
+  background-color: #09c0cabe;
+}
+
+/* Media Query for Responsive Layout */
+@media (max-width: 600px) {
   .related-movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: column; /* Correct flex direction */
   }
-  
+
   .related-movies-container .btn {
-    display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: center;
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s;
   }
-  
-  .related-movies-container .btn img {
-    width: 50px;
-    height: auto;
-    margin-left: 10px;
-    border-radius: 5px;
-  }
-  
-  .related-movies-container .btn:hover {
-    background-color: #09c0cabe;
-  }
-  
-  /* Media Query for Responsive Layout */
-  @media (max-width: 600px) {
-    .related-movies-container {
-      flex-direction: flex;
-    }
-  
-    .related-movies-container .btn {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-  
+}
