@@ -3,15 +3,16 @@ body{
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0)
   );
+   overflow: hidden; /* Disable scrolling initially */
 }
-  .locked {
-    pointer-events: auto; /* Enable interactions */
-    opacity: 1; /* Make it look active */
-  }
-  .unlocked {
-    pointer-events: auto; /* Enable interactions */
-    opacity: 1; /* Normal appearance */
-  }
+    }
+    .locked {
+      pointer-events: none; /* Disable interactions */
+      opacity: 0.5; /* Make it look inactive */
+    }
+    .unlocked {
+      pointer-events: auto; /* Enable interactions */
+      opacity: 1; /* Normal appearance */
 
 /* Preview Section Styles */
 .preview {
