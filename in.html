@@ -824,25 +824,25 @@
         </div>
       </section>
   
-      <script>
-        function unlockNextSection(nextSectionId) {
-          // Unlock the next section by changing the class
-          const nextSection = document.getElementById(nextSectionId);
-          nextSection.classList.remove('locked');
-          nextSection.classList.add('unlocked');
-    
-          // Scroll to the next section smoothly
-          nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    
-        // Lock scroll initially
-        window.addEventListener('scroll', function (e) {
-          // Prevent scrolling while sections are locked
-          if (document.querySelector('.locked')) {
-            e.preventDefault();
-            window.scrollTo(0, 0);
-          }
-        }, { passive: false });
-      </script>
+     <script>
+  function unlockNextSection(nextSectionId) {
+    // Unlock the next section by changing the class
+    const nextSection = document.getElementById(nextSectionId);
+    nextSection.classList.remove('locked');
+    nextSection.classList.add('unlocked');
+
+    // Scroll to the next section smoothly
+    nextSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Lock scroll initially
+  window.addEventListener('scroll', function (e) {
+    // Prevent scrolling while sections are locked
+    if (document.querySelector('.locked')) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    }
+  }, { passive: false });
+</script>
 </body>
 </html>
