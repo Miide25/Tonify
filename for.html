@@ -3,81 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tonify</title>
+  <title>Tonify - Sliding Form</title>
   <link rel="stylesheet" href="for.css">
 </head>
 <body>
-  <!-- Signup Form -->
-  <section class="signup" id="signup">
-    <div class="form-container">
-      <h2>Sign Up</h2>
-      <input type="text" id="signupName" placeholder="Enter your name" required />
-      <input type="email" id="signupEmail" placeholder="Enter your email" required />
-      <input type="password" id="signupPassword" placeholder="Enter your password" required />
-      <button onclick="signUp()">Sign Up</button>
-    </div>
-  </section>
-<!-- Welcome Message -->
-<div id="welcomeMessage" class="welcome-message"></div>
 
-  <!-- Login Form -->
-  <section class="login" id="login">
-    <div class="form-container">
-      <h2>Login</h2>
-      <input type="email" id="loginEmail" placeholder="Enter your email" required />
-      <input type="password" id="loginPassword" placeholder="Enter your password" required />
-      <button onclick="login()">Login</button>
+  <div class="container right-panel-active">
+    <!-- Sign Up -->
+    <div class="container__form container--signup">
+      <form action="#" class="form" id="form1">
+        <h2 class="form__title">Sign Up</h2>
+        <input type="text" placeholder="User" class="input" />
+        <input type="email" placeholder="Email" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <button class="btn">Sign Up</button>
+      </form>
     </div>
-  </section>
-
-  <!-- Welcome Message -->
-  <div id="welcomeMessage" class="welcome-message"></div>
+  
+    <!-- Sign In -->
+    <div class="container__form container--signin">
+      <form action="#" class="form" id="form2">
+        <h2 class="form__title">Sign In</h2>
+        <input type="email" placeholder="Email" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <a href="#" class="link">Forgot your password?</a>
+        <button class="btn">Sign In</button>
+      </form>
+    </div>
+ 
+    <!-- Overlay -->
+    <div class="container__overlay">
+      <div class="overlay">
+        <div class="overlay__panel overlay--left">
+          <button class="btn" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay__panel overlay--right">
+          <button class="btn" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- JavaScript -->
   <script>
-    function signUp() {
-      // Get user input from signup form
-      const name = document.getElementById("signupName").value.trim();
-      const email = document.getElementById("signupEmail").value.trim();
-      const password = document.getElementById("signupPassword").value.trim();
+const signInBtn = document.getElementById("signIn");
+const signUpBtn = document.getElementById("signUp");
+const firstForm = document.getElementById("form1");
+const secondForm = document.getElementById("form2");
+const container = document.querySelector(".container");
 
-      // Validate input fields
-      if (!name || !email || !password) {
-        alert("Please fill in all fields.");
-        return;
-      }
+// Switch between Sign In and Sign Up forms
+signInBtn.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
+});
 
-      // Store user data in localStorage
-      localStorage.setItem("userName", name);
-      localStorage.setItem("userEmail", email);
-      localStorage.setItem("userPassword", password);
+signUpBtn.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
+});
 
-      alert("Sign up successful! Please log in.");
-    }
+// Prevent form submission (for now)
+firstForm.addEventListener("submit", (e) => e.preventDefault());
+secondForm.addEventListener("submit", (e) => e.preventDefault());
 
-    function login() {
-      // Get user input from login form
-      const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value.trim();
+// Sign Up function
+function signUp() {
+  const name = document.querySelector("#form1 input[type='text']").value.trim();
+  const email = document.querySelector("#form1 input[type='email']").value.trim();
+  const password = document.querySelector("#form1 input[type='password']").value.trim();
 
-      // Retrieve stored user data from localStorage
-      const storedEmail = localStorage.getItem("userEmail");
-      const storedPassword = localStorage.getItem("userPassword");
-      const storedName = localStorage.getItem("userName");
+  if (!name || !email || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
-      // Validate login credentials
-      if (email === storedEmail && password === storedPassword) {
-        // Display welcome message if login is successful
-        document.getElementById("welcomeMessage").textContent = `Welcome, ${storedName}!`;
+  // Store user data in localStorage
+  localStorage.setItem("userName", name);
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", password);
 
-        // Redirect to the next page
-        setTimeout(() => {
-          window.location.href = "inde.html"; // Replace with your next page URL
-        }, 2000);
-      } else {
-        alert("Incorrect email or password. Please try again.");
-      }
-    }
+  alert("Sign up successful! Please log in.");
+  container.classList.remove("right-panel-active"); // Show login form
+}
+
+// Login function
+function login() {
+  const email = document.querySelector("#form2 input[type='email']").value.trim();
+  const password = document.querySelector("#form2 input[type='password']").value.trim();
+
+  const storedEmail = localStorage.getItem("userEmail");
+  const storedPassword = localStorage.getItem("userPassword");
+  const storedName = localStorage.getItem("userName");
+
+  if (email === storedEmail && password === storedPassword) {
+    
+
+    // Redirect after 2 seconds
+    setTimeout(() => {
+      window.location.href = "watch.html"; // Replace with your next page URL
+    }, 2000);
+  } else {
+    alert("Incorrect email or password. Please try again.");
+  }
+}
+
+// Attach the signUp and login functions to the buttons
+document.querySelector("#form1 .btn").addEventListener("click", signUp);
+document.querySelector("#form2 .btn").addEventListener("click", login);
   </script>
 </body>
 </html>
