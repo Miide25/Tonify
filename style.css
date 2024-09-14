@@ -10,7 +10,7 @@
     }
     
     body{
-        background-image: url(safe.jpg);
+        background-image: url(IMG-20240914-WA0026.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 2;
@@ -116,8 +116,8 @@
     }
     @media (max-width: 600px) {
 
-        body{
-            background-image: url(safe.jpg);
+         body{
+            background-image: url(feel.jpg);
             background-repeat: repeat;
             background-size: cover;
             opacity: 1;
