@@ -216,3 +216,9 @@ video {
     padding: 4rem 7%;
   }
 }
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 5%;
+  }
+}
