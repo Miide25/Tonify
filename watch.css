@@ -129,7 +129,7 @@ video {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: palevioletred;
+  background-color: rgba(216, 112, 147, 0.449);
   color: #fff;
   border-radius: 5px;
   font-size: 1.2rem;
