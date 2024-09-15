@@ -96,7 +96,7 @@ body {
 }
 .navbar a:hover,
 .navbar a.active {
-   color: palevioletred;
+   color: white;
 }
 
 /* Section Styles */
@@ -129,10 +129,7 @@ video {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-  );
+  background-color: palevioletred;
   color: #fff;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -140,7 +137,7 @@ video {
 }
 
 .btn:hover {
-  background-color: #09c0cabe;
+  background-color: pink;
 }
 
 .btn img {
