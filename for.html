@@ -34,6 +34,8 @@
             <a href="#forgot">Forgot Password?</a>
           </div>
         </div>
+        <div id="welcomeMessage" class="welcome-message" style="display: flex;"></div>
+      </div>
         <div class="sign-up-htm">
           <div class="group">
             <label for="username-signup" class="label">Username</label>
@@ -62,7 +64,7 @@
       </div>
     </div>
     <!-- Add this div to display the welcome message -->
-    <div id="welcomeMessage" class="welcome-message" style="display: none;"></div>
+    <div id="welcomeMessage" class="welcome-message" style="display: flex;"></div>
   </div>
   <script>
     // Get form elements
@@ -96,7 +98,7 @@
 
           // Redirect to next page after 2 seconds
           setTimeout(() => {
-            window.location.href = "inde.html";  
+            window.location.href = "index.html";  
           }, 2000);
         } else {
           alert('Incorrect username or password.');
