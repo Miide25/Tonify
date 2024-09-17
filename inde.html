@@ -5,139 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TONIFY - Movies and Dramas</title>
     <link rel="stylesheet" href="watch.css">
-    <!-- Font Awesome for Icons -->
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <!-- Header Section -->
+
   <header class="header">
     <a href="#" class="logo">TONIFY</a>
-    <nav class="navbar" id="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#services">Hollywood Movies</a>
-      <a href="#about">Nollywood Movies</a>
-      <a href="#contact">Korean Dramas</a>
-      <a href="#animation">Animation</a>
-    </nav>
-
-    <!-- Hamburger Icon for Mobile Menu -->
-    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#car">Home</a>
+          <a href="#action">Action</a>
+          <a href="#animation">Animation</a>
+          <a href="#anime">Anime</a>
+        
+      <a href="#nm">Hollywood Movie</a>
+      <a href="#hm">Nollywood Movie</a>
+    </div>
+    <div class="search">
+      <input id="search" type="search" placeholder="search..."><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+  
   </header>
 
-  <!-- Main Content -->
-  <section class="home">
-    <div class="home-content">
-      <input type="search" id="searchInput" placeholder="Search..." oninput="filterContent()" />
+  <img id="car" src="Untitled.png">
+  <section class="trend" id="">
+    <h2>Trending Movies</h2>
+    <div class="tren" > 
+    <a href="in.html#movie1"><img src="download (12).jpeg"></a>
+    <a href="in.html#movie2"><img src="download (13).jpeg"></a>
+    <a href="in.html#movie3"><img src="download (14).jpeg"></a>
+    <a href="in.html#movie4"><img src="download (15).jpeg"></a>
+    <a href="in.html#movie5"><img src="download (16).jpeg"></a>
+    <a href="in.html#movie6"><img src="download (17).jpeg"></a>
+    <a href="in.html#movie7"><img src="download (18).jpeg"></a>
+    <a href="in.html#movie8"><img src="download (19).jpeg"></a>
     </div>
-  </section>
+    </section>
 
-  <!-- Welcome Message -->
-  <div id="welcomeMessage"></div>>
+    <section class="trend" id="action">
+      <h2>Action Movies</h2>
+      <div class="tren" > 
+        <a href="in.html#movie9"><img src="download (12).jpeg"></a>
+        <a href="in.html#movie10"><img src="download (13).jpeg"></a>
+        <a href="in.html#movie11"><img src="download (14).jpeg"></a>
+        <a href="in.html#movie12"><img src="download (15).jpeg"></a>
+        <a href="in.html#movie13"><img src="download (16).jpeg"></a>
+        <a href="in.html#movie14"><img src="download (17).jpeg"></a>
+        <a href="in.html#movie15"><img src="download (18).jpeg"></a>
+        <a href="in.html#movie16"><img src="download (19).jpeg"></a>
+      </div>
+    </section>
 
-  <!-- Sections (Portfolio, etc.) -->
-  <section class="home" id="home">
-    <div class="home-content">
-      <video controls width="900" autoplay loop>
-        <source src="lv_0_20240806205125~2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
+    <section class="trend" id="animation">
+      <h2>Animation</h2>
+      <div class="tren"> 
+        <a href="in.html#movie17"><img src="download (12).jpeg"></a>
+        <a href="in.html#movie18"><img src="download (13).jpeg"></a>
+        <a href="in.html#movie19"><img src="download (14).jpeg"></a>
+        <a href="in.html#movie20"><img src="download (15).jpeg"></a>
+        <a href="in.html#movie21"><img src="download (16).jpeg"></a>
+        <a href="in.html#movie22"><img src="download (17).jpeg"></a>
+        <a href="in.html#movie23"><img src="download (18).jpeg"></a>
+        <a href="in.html#movie24"><img src="download (19).jpeg"></a>
+      </div>
+    </section>
+    <section class="trend" id="anime">
+      <h2>Anime</h2>
+      <div class="tren"> 
+          <a href="in.html#movie25"><img src="download (12).jpeg"></a>
+          <a href="in.html#movie26"><img src="download (13).jpeg"></a>
+          <a href="in.html#movie27"><img src="download (14).jpeg"></a>
+          <a href="in.html#movie28"><img src="download (15).jpeg"></a>
+          <a href="in.html#movie29"><img src="download (16).jpeg"></a>
+          <a href="in.html#movie30"><img src="download (17).jpeg"></a>
+          <a href="in.html#movie31"><img src="download (18).jpeg"></a>
+          <a href="in.html#movie32"><img src="download (19).jpeg"></a>
+        </div>
+    </section>
 
-  <!-- Hollywood Movies Section -->
-  <section class="portfolio" id="services">
-    <h2 class="heading">Hollywood Movies</h2>
-    <div class="portfolio-container">
-      <a href="in.html#movie1" class="btn">Download<img src="download (32).jpeg" alt="Hollywood Movie Thumbnail"></a>
-      <a href="in.html#movie2" class="btn">Download<img src="download (30).jpeg" alt="Hollywood Movie Thumbnail"></a>
-      <a href="in.html#movie3" class="btn">Download<img src="download (37).jpeg" alt="Hollywood Movie Thumbnail"></a>
-      <a href="in.html#movie4" class="btn">Download<img src="download (34).jpeg" alt="Hollywood Movie Thumbnail"></a>
-      <a href="in.html#movie5" class="btn">Download<img src="download (39).jpeg" alt="Hollywood Movie Thumbnail"></a>
-      <a href="in.html#movie6" class="btn">Download<img src="download (40).jpeg" alt="Hollywood Movie Thumbnail"></a>
-    </div>
-  </section>
+    <section class="trend" id="hm">
+      <h2>Nollywood Movies</h2>
+      <div class="tren"> 
+          <a href="in.html#movie33"><img src="download (12).jpeg"></a>
+          <a href="in.html#movie34"><img src="download (13).jpeg"></a>
+          <a href="in.html#movie35"><img src="download (14).jpeg"></a>
+          <a href="in.html#movie36"><img src="download (15).jpeg"></a>
+          <a href="in.html#movie37"><img src="download (16).jpeg"></a>
+          <a href="in.html#movie38"><img src="download (17).jpeg"></a>
+          <a href="in.html#movie39"><img src="download (18).jpeg"></a>
+          <a href="in.html#movie40"><img src="download (19).jpeg"></a>
+        </div>
+        </section>
 
-  <!-- Nollywood Movies Section -->
-  <section class="portfolio" id="about">
-    <h2 class="heading">Nollywood Movies</h2>
-    <div class="portfolio-container">
-      <a href="in.html#movie7" class="btn">Download<img src="2024(1).jpeg" alt="Nollywood Movie Thumbnail"></a>
-      <a href="in.html#movie8" class="btn">Download<img src="2024(2).jpeg" alt="Nollywood Movie Thumbnail"></a>
-      <a href="in.html#movie9" class="btn">Download<img src="2024(3).jpeg" alt="Nollywood Movie Thumbnail"></a>
-      <a href="in.html#movie10" class="btn">Download<img src="2024(4).jpeg" alt="Nollywood Movie Thumbnail"></a>
-      <a href="in.html#movie11" class="btn">Download<img src="2024.jpeg" alt="Nollywood Movie Thumbnail"></a>
-      <a href="in.html#movie12" class="btn">Download<img src="2024(5).jpeg" alt="Nollywood Movie Thumbnail"></a>
-    </div>
-  </section>
+          <section class="trend" id="hm">
+            <h2>Hollywood Movies</h2>
+            <div class="tren"> 
+              <a href="in.html#movie41"><img src="download (12).jpeg"></a>
+              <a href="in.html#movie42"><img src="download (13).jpeg"></a>
+              <a href="in.html#movie43"><img src="download (14).jpeg"></a>
+              <a href="in.html#movie44"><img src="download (15).jpeg"></a>
+              <a href="in.html#movie45"><img src="download (16).jpeg"></a>
+              <a href="in.html#movie46"><img src="download (17).jpeg"></a>
+              <a href="in.html#movie47"><img src="download (18).jpeg"></a>
+              <a href="in.html#movie48"><img src="download (19).jpeg"></a>
+            </div>
+          </section>
+          <script>
+            function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
 
-  <!-- Korean Dramas Section -->
-  <section class="portfolio" id="contact">
-    <h2 class="heading">Korean Dramas</h2>
-    <div class="portfolio-container">
-      <a href="in.html#movie13" class="btn">Download<img src="download (23).jpeg" alt="Korean Drama Thumbnail"></a>
-      <a href="in.html#movie14" class="btn">Download<img src="download (24).jpeg" alt="Korean Drama Thumbnail"></a>
-      <a href="in.html#movie15" class="btn">Download<img src="download (25).jpeg" alt="Korean Drama Thumbnail"></a>
-      <a href="in.html#movie16" class="btn">Download<img src="download (26).jpeg" alt="Korean Drama Thumbnail"></a>
-      <a href="in.html#movie17" class="btn">Download<img src="download (27).jpeg" alt="Korean Drama Thumbnail"></a>
-      <a href="in.html#movie18" class="btn">Download<img src="download (28).jpeg" alt="Korean Drama Thumbnail"></a>
-    </div>
-  </section>
-
-  <!-- Animation Section -->
-  <section class="portfolio" id="animation">
-    <h2 class="heading">Animation</h2>
-    <div class="portfolio-container">
-      <a href="in.html#movie19" class="btn">Download<img src="download (17).jpeg" alt="Animation Thumbnail"></a>
-      <a href="in.html#movie20" class="btn">Download<img src="download (18).jpeg" alt="Animation Thumbnail"></a>
-      <a href="in.html#movie21" class="btn">Download<img src="download (19).jpeg" alt="Animation Thumbnail"></a>
-      <a href="in.html#movie22" class="btn">Download<img src="download (20).jpeg" alt="Animation Thumbnail"></a>
-      <a href="in.html#movie23" class="btn">Download<img src="download (21).jpeg" alt="Animation Thumbnail"></a>
-      <a href="in.html#movie24" class="btn">Download<img src="download (22).jpeg" alt="Animation Thumbnail"></a>
-    </div>
-  </section>
-  <footer class="site-footer">
-    <p>&copy; 2024 by Oni Olaoluwa Paul. A huge thanks to Olanikanju Victor Olamide for his outstanding backend development work on our website. Your expertise and collaboration have been instrumental in making this project a success.</p>
-</footer>
-
-
-  <!-- JavaScript -->
-  <script>
- // Toggle Mobile Menu
-    function toggleMenu() {
-      const navbar = document.getElementById("navbar");
-      navbar.classList.toggle("active");
-    }
-
-    // Filter Content Based on Search Input
-    function filterContent() {
-      const searchInput = document.getElementById("searchInput").value.toLowerCase();
-      const contentItems = document.querySelectorAll(".content-item");
-
-      contentItems.forEach(item => {
-        const title = item.getAttribute("data-title").toLowerCase();
-        if (title.includes(searchInput)) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    }
-
-    function filterContent() {
-      const searchInput = document.getElementById("searchInput").value.toLowerCase();
-      const sections = document.querySelectorAll(".portfolio-container a");
-
-      sections.forEach(section => {
-        const text = section.textContent.toLowerCase();
-        const altText = section.querySelector('img').alt.toLowerCase();
-        
-        if (text.includes(searchInput) || altText.includes(searchInput)) {
-          section.style.display = "flex";
-        } else {
-          section.style.display = "none";
-        }
-      });
-    }
-  </script>
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+          </script>
+          
+          
 </body>
-</html>
