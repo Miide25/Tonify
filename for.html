@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In / Sign Up Form</title>
+  <title>Tonify</title>
   <link rel="stylesheet" href="for.css">
 </head>
 <body>
@@ -13,9 +13,15 @@
       <form id="signInForm">
         <h2>Sign In</h2>
         <input type="email" id="signInEmail" placeholder="Email" required aria-label="Email">
-        <input type="password" id="signInPassword" placeholder="Password" required aria-label="Password">
+        <div class="password-container">
+          <input type="password" id="signInPassword" placeholder="Password" required aria-label="Password">
+          <span class="toggle-password" data-target="signInPassword">👁️</span>
+        </div>
         <button type="submit" aria-label="Sign In">Sign In</button>
         <p>Don't have an account? <a href="#" id="switchToSignUp">Create an account</a></p>
+
+        <!-- Forgot Password Link -->
+        <p><a href="#" id="forgotPassword">Forgot your password?</a></p>
       </form>
     </div>
 
@@ -25,16 +31,51 @@
         <h2>Create Account</h2>
         <input type="text" id="signUpUsername" placeholder="Username" required aria-label="Username">
         <input type="email" id="signUpEmail" placeholder="Email" required aria-label="Email">
-        <input type="password" id="signUpPassword" placeholder="Password" required aria-label="Password">
-        <input type="password" id="signUpConfirmPassword" placeholder="Confirm Password" required aria-label="Confirm Password">
+        <div class="password-container">
+          <input type="password" id="signUpPassword" placeholder="Password" required aria-label="Password">
+          <span class="toggle-password" data-target="signUpPassword">👁️</span>
+        </div>
+        <div class="password-container">
+          <input type="password" id="signUpConfirmPassword" placeholder="Confirm Password" required aria-label="Confirm Password">
+          <span class="toggle-password" data-target="signUpConfirmPassword">👁️</span>
+        </div>
         <button type="submit" aria-label="Sign Up">Sign Up</button>
         <p>Already have an account? <a href="#" id="switchToSignIn">Sign in here</a></p>
+      </form>
+    </div>
+
+    <!-- OTP Form -->
+    <div class="form-container otp-container" style="display: none;">
+      <form id="otpForm">
+        <h2>Enter OTP</h2>
+        <input type="text" id="otpInput" placeholder="Enter OTP" required aria-label="OTP">
+        <button type="submit" aria-label="Verify OTP">Verify OTP</button>
+        <p><a href="#" id="resendOtp">Resend OTP</a></p>
+      </form>
+    </div>
+
+    <!-- Reset Password Form -->
+    <div class="form-container reset-password-container" style="display: none;">
+      <form id="resetPasswordForm">
+        <h2>Reset Password</h2>
+        <div class="password-container">
+          <input type="password" id="newPassword" placeholder="New Password" required aria-label="New Password">
+          <span class="toggle-password" data-target="newPassword">👁️</span>
+        </div>
+        <div class="password-container">
+          <input type="password" id="confirmNewPassword" placeholder="Confirm New Password" required aria-label="Confirm New Password">
+          <span class="toggle-password" data-target="confirmNewPassword">👁️</span>
+        </div>
+        <button type="submit" aria-label="Reset Password">Reset Password</button>
       </form>
     </div>
   </div>
 
   <script>
-    // Toggle between Sign In and Sign Up forms
+    let generatedOtp = '';
+    let tempEmail = '';  // Store the email temporarily for password reset
+
+    // Toggle between forms
     document.getElementById('switchToSignUp').addEventListener('click', function(e) {
       e.preventDefault();
       document.querySelector('.sign-in-container').style.display = 'none';
@@ -65,54 +106,130 @@
       return user ? JSON.parse(user) : null;
     }
 
-    // Handle Sign In Form submission
-    document.getElementById('signInForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('signInEmail').value;
-      const password = document.getElementById('signInPassword').value;
-
-      if (email === '' || password === '') {
-        alert('Please fill in all fields.');
-      } else {
-        const user = getUser(email);
-        if (user && user.password === password) {
-          alert('Sign in successful! Redirecting...');
-          setTimeout(() => {
-            window.location.href = "inde.html";  // Redirect after 2 seconds
-          }, 2000);
+    // Toggle password visibility
+    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+    togglePasswordIcons.forEach(icon => {
+      icon.addEventListener('click', function() {
+        const targetInput = document.getElementById(this.getAttribute('data-target'));
+        if (targetInput.type === 'password') {
+          targetInput.type = 'text';
         } else {
-          alert('Incorrect email or password.');
+          targetInput.type = 'password';
         }
-      }
+      });
     });
 
     // Handle Sign Up Form submission
     document.getElementById('signUpForm').addEventListener('submit', function(e) {
       e.preventDefault();
+
       const username = document.getElementById('signUpUsername').value;
       const email = document.getElementById('signUpEmail').value;
       const password = document.getElementById('signUpPassword').value;
       const confirmPassword = document.getElementById('signUpConfirmPassword').value;
 
-      if (username === '' || email === '' || password === '' || confirmPassword === '') {
-        alert('Please fill in all fields.');
-      } else if (password !== confirmPassword) {
+      if (password !== confirmPassword) {
         alert('Passwords do not match.');
       } else if (!isPasswordStrong(password)) {
         alert('Password is too weak. It must be at least 8 characters long, contain an uppercase letter, a lowercase letter, a number, and a special character.');
+      } else if (getUser(email)) {
+        alert('This email is already registered. Please sign in.');
       } else {
-        // Check if email is already registered
-        if (getUser(email)) {
-          alert('Email is already registered.');
-        } else {
-          // Store the new user
-          storeUser(username, email, password);
-          alert('Account created successfully! Please sign in.');
+        // Store the new user in localStorage
+        storeUser(username, email, password);
+        alert('Account created successfully! You can now sign in.');
 
-          // Switch to the sign-in form after successful sign-up
-          document.querySelector('.sign-up-container').style.display = 'none';
-          document.querySelector('.sign-in-container').style.display = 'block';
+        // Switch to the Sign In form
+        document.querySelector('.sign-up-container').style.display = 'none';
+        document.querySelector('.sign-in-container').style.display = 'block';
+      }
+    });
+
+    // Handle Sign In Form submission
+    document.getElementById('signInForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('signInEmail').value;
+      const password = document.getElementById('signInPassword').value;
+
+      const user = getUser(email);
+
+      if (user && user.password === password) {
+        alert(`Welcome back, ${user.username}! You've successfully signed in.`);
+        // Redirect to the user's dashboard or another page
+        window.location.href = 'inde.html'; 
+      } else {
+        alert('Invalid email or password. Please try again.');
+      }
+    });
+
+    // Handle "Forgot Password" click
+    document.getElementById('forgotPassword').addEventListener('click', function(e) {
+      e.preventDefault();
+      const email = prompt("Please enter your registered email address:");
+
+      if (email) {
+        const user = getUser(email);
+        if (user) {
+          alert('An OTP has been sent to your email.');
+          tempEmail = email;
+          generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();  
+          console.log('Generated OTP:', generatedOtp);  
+
+          // Switch to OTP form
+          document.querySelector('.sign-in-container').style.display = 'none';
+          document.querySelector('.otp-container').style.display = 'block';
+        } else {
+          alert('No account found with that email.');
         }
+      }
+    });
+
+    // Handle OTP Form submission
+    document.getElementById('otpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const otpInput = document.getElementById('otpInput').value;
+
+      if (otpInput === generatedOtp) {
+        alert('OTP verified successfully!');
+        // Switch to Reset Password form
+        document.querySelector('.otp-container').style.display = 'none';
+        document.querySelector('.reset-password-container').style.display = 'block';
+      } else {
+        alert('Invalid OTP. Please try again.');
+      }
+    });
+
+    // Handle Resend OTP click
+    document.getElementById('resendOtp').addEventListener('click', function(e) {
+      e.preventDefault();
+      generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();  // Simulate new OTP generation
+      console.log('New OTP:', generatedOtp);  // In real apps, this would be sent via email
+      alert('A new OTP has been sent to your email.');
+    });
+
+    // Handle Reset Password Form submission
+    document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const newPassword = document.getElementById('newPassword').value;
+      const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+
+      if (newPassword === '' || confirmNewPassword === '') {
+        alert('Please fill in both fields.');
+      } else if (newPassword !== confirmNewPassword) {
+        alert('Passwords do not match.');
+      } else if (!isPasswordStrong(newPassword)) {
+        alert('Password is too weak. It must be at least 8 characters long, contain an uppercase letter, a lowercase letter, a number, and a special character.');
+      } else {
+        // Update user password in localStorage
+        const user = getUser(tempEmail);
+        user.password = newPassword;
+        localStorage.setItem(tempEmail, JSON.stringify(user));  // Update password
+        alert('Password has been reset successfully! Please sign in.');
+
+        // Switch back to Sign In form
+        document.querySelector('.reset-password-container').style.display = 'none';
+        document.querySelector('.sign-in-container').style.display = 'block';
       }
     });
   </script>
